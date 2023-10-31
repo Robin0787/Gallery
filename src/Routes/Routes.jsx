@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import PageLoading from "../Components/PageLoading/PageLoading";
+import Docs from "../Pages/Docs/Docs";
 import Provider from "../Provider/Provider";
 
 
@@ -20,7 +21,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'docs',
-                element: <div className="text-black h-[calc(100vh-68px)] flex justify-center items-center dark:text-white dark:bg-primary duration-300 text-3xl"><p>Welcome to Documentation</p></div>
+                element: <Provider><Suspense fallback={<PageLoading />}> <Docs /></Suspense></Provider>
             }
         ]
     }

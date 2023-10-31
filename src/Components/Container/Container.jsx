@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Container = ({children}) => {
+const Container = ({children, className}) => {
     return (
-        <section className='w-[95%] md:w-[90%] mx-auto'>
+        <section className={`w-full md:w-[90%] mx-auto ${className}`}>
             {children}
         </section>
     );

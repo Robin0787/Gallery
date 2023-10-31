@@ -5,7 +5,7 @@ import Navbar from '../Pages/Shared/Navbar';
 
 const Main = () => {
     return (
-        <section className='dark:bg-primary duration-300'>
+        <section className='min-h-screen dark:bg-primary duration-300'>
             <Navbar />
             <Outlet />
         </section>
