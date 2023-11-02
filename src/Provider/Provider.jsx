@@ -18,62 +18,63 @@ const initialState = {
     images: [
         {
 
-            id: 'DfKdfad423',
+            id: 'DfKdfad423',        
             img: img1,
             isSelected: false,
         },
         {
-            id: 'KdDvdd323',
+            id: 'KdDvdd323',        
             img: img2,
             isSelected: false,
         },
         {
-            id: 'TyeriW123',
+            id: 'TyeriW123',        
             img: img3,
             isSelected: false,
         },
         {
-            id: 'eIkef3833',
+            id: 'eIkef3833',        
             img: img4,
             isSelected: false,
         },
         {
-            id: 'Kdfjow3254',
+            id: 'Kdfjow3254',        
             img: img5,
             isSelected: false,
         },
         {
-            id: 'Pqoejc9454',
+            id: 'Pqoejc9454',        
             img: img6,
             isSelected: false,
         },
         {
-            id: 'LTddQk3492',
+            id: 'LTddQk3492',        
             img: img7,
             isSelected: false,
         },
         {
-            id: 'dnvdDj234',
+            id: 'dnvdDj234',        
             img: img8,
             isSelected: false,
         },
         {
-            id: 'UjdKde442',
+            id: 'UjdKde442',        
             img: img9,
             isSelected: false,
         },
         {
-            id: 'LaiDnd572',
+            id: 'LaiDnd572',        
             img: img10,
             isSelected: false,
         },
         {
-            id: 'eondjf7294',
+            id: 'eondjf7294',        
             img: img11,
             isSelected: false,
         },
     ]
 }
+
 
 const reducer = (state, action) => {
     const type = action.type;
