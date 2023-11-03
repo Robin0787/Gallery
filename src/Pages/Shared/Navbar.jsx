@@ -14,6 +14,7 @@ const Navbar = () => {
                 <div className='flex justify-center items-center gap-6 md:gap-10'>
                     <Link to='/' className='nav-link'>Gallery</Link>
                     <Link to='/docs' className='nav-link'>Docs</Link>
+                    <Link to='/list' className='nav-link'>List</Link>
                     <button
                         onClick={handleThemeSwitch}
                         className="p-3 hover:bg-gray-100 dark:hover:bg-primary/60 rounded-full duration-300" >

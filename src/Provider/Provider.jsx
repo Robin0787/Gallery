@@ -80,7 +80,9 @@ const reducer = (state, action) => {
     const type = action.type;
 
     switch (type) {
+        
         case 'select':
+            // Selecting images based on image id.
             return {
                 ...state,
                 images: state.images.map(item => {
@@ -95,27 +97,36 @@ const reducer = (state, action) => {
                 }),
             };
         case 'delete-img':
-            // removing the deleted item
+            // deleting single image based on the image id that will come from action.payload property.
             return {
                 ...state,
                 images: state.images.filter(item => item.id !== action.payload)
             }
         case 'delete-selected':
-            // removing all the selected items
+            // removing all the selected items from the state.
             return {
                 ...state,
                 selectedImages: 0,
                 images: state.images.filter(item => !item.isSelected),
             }
         case 'increase-selected': 
+        // Increasing selected image number
             return {
                 ...state,
                 selectedImages: state.selectedImages + 1
             }
         case 'decrease-selected': 
+            // Decreasing selected image number
             return {
                 ...state,
                 selectedImages: state.selectedImages - 1
+            }
+        case 're-order': 
+            // Updating images in the actual state according to updated order.
+            // Updated ordered images will come from the dispatch function's payload property. 
+            return {
+                ...state,
+                images: action.payload
             }
         default:
             state
