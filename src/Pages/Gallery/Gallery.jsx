@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import Container from '../../Components/Container/Container';
 import SingleImageCard from '../../Components/SingleImage/SingleImageCard';
 import { galleryContext } from '../../Provider/Provider';
+import UploadImage from './UploadImage';
 
 const Gallery = () => {
     const { galleryData, dispatch } = useContext(galleryContext);
@@ -37,47 +37,29 @@ const Gallery = () => {
                         </div>
                     </article>
                 </section>
-                <DragDropContext onDragStart={(props) => console.log(props)} onDragEnd={(props) => console.log(props)}>
-                    <>
-                        {
-                            galleryData.images.length > 0 ?
-                                (
-                                    <Droppable droppableId='droppable-gallery'>
-                                        {(provided, _) => (
-                                            <section ref={provided.innerRef} {...provided.droppableProps}
-                                                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 image-gallery">
-                                                {
-                                                    galleryData.images.map((item, index) => (
-                                                        <Draggable key={item.id} draggableId={item.id} index={index}>
-                                                            {
-                                                                (provided, _) => (
-                                                                    <div
-                                                                        key={item.id}
-                                                                        className='gallery-item'
-                                                                        ref={provided.innerRef}
-                                                                        {...provided.draggableProps}
-                                                                        {...provided.dragHandleProps}>
-                                                                        <SingleImageCard item={item} />
-                                                                    </div>
-                                                                )
-                                                            }
-                                                        </Draggable>
-                                                    ))}
-                                            </section>
-                                        )}
-
-                                    </Droppable>
-                                )
-                                :
-                                (
-                                    <section className='py-10 text-center'>
-                                        <h1 className='text-3xl '>Opps! No Images Here.</h1>
-                                    </section>
-                                )
-                        }
-
-                    </>
-                </DragDropContext>
+                <>
+                    {
+                        galleryData.images.length > 0 ?
+                            (
+                                <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 image-gallery">
+                                    {
+                                        galleryData.images.map((item) => (
+                                            <SingleImageCard key={item.id} item={item} />
+                                    ))}
+                                    <UploadImage />
+                                </section>
+                            )
+                            :
+                            (
+                                <section className='py-10 text-center'>
+                                    <h1 className='text-3xl mb-5'>Opps! No Images Here.</h1>
+                                    <div className='mx-auto w-[206px]'>
+                                    <UploadImage />
+                                    </div>
+                                </section>
+                            )
+                    }
+                </>
             </Container>
         </section>
     );
