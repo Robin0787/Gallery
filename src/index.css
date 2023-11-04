@@ -21,3 +21,9 @@ img::selection {
 .dragging-item {
   opacity: 0;
 }
+
+/* Styles for documentation */
+
+.indicator {
+  @apply px-2 py-[1px] bg-gray-200 rounded-md  dark:bg-gray-700;
+}

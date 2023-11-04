@@ -12,6 +12,7 @@ import img7 from "../assets/image-7.webp";
 import img8 from "../assets/image-8.webp";
 import img2 from "../assets/image-9.webp";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const galleryContext = createContext();
 
 const initialState = {
@@ -78,10 +79,10 @@ const initialState = {
 
 const reducer = (state, action) => {
     const type = action.type;
-
     switch (type) {
         
         case 'select':
+            // In this case we will have the checkStatus value in the action prop;
             // Selecting images based on image id.
             return {
                 ...state,
@@ -139,6 +140,7 @@ const reducer = (state, action) => {
 }
 
 
+// eslint-disable-next-line react/prop-types
 const Provider = ({ children }) => {
     const [galleryData, dispatch] = useReducer(reducer, initialState);
     const [theme, setTheme] = useState('dark');
@@ -177,3 +179,17 @@ const Provider = ({ children }) => {
 };
 
 export default Provider;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
