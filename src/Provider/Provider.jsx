@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer, useState } from 'react';
+import { v4 } from 'uuid';
 import img10 from "../assets/image-1.webp";
 import img1 from "../assets/image-10.jpeg";
 import img9 from "../assets/image-11.jpeg";
@@ -18,63 +19,62 @@ const initialState = {
     images: [
         {
 
-            id: 'DfKdfad423',        
+            id: v4(),
             img: img1,
             isSelected: false,
         },
         {
-            id: 'KdDvdd323',        
+            id: v4(),        
             img: img2,
             isSelected: false,
         },
         {
-            id: 'TyeriW123',        
+            id: v4(),        
             img: img3,
             isSelected: false,
         },
         {
-            id: 'eIkef3833',        
+            id: v4(),        
             img: img4,
             isSelected: false,
         },
         {
-            id: 'Kdfjow3254',        
+            id: v4(),        
             img: img5,
             isSelected: false,
         },
         {
-            id: 'Pqoejc9454',        
+            id: v4(),        
             img: img6,
             isSelected: false,
         },
         {
-            id: 'LTddQk3492',        
+            id: v4(),        
             img: img7,
             isSelected: false,
         },
         {
-            id: 'dnvdDj234',        
+            id: v4(),        
             img: img8,
             isSelected: false,
         },
         {
-            id: 'UjdKde442',        
+            id: v4(),        
             img: img9,
             isSelected: false,
         },
         {
-            id: 'LaiDnd572',        
+            id: v4(),        
             img: img10,
             isSelected: false,
         },
         {
-            id: 'eondjf7294',        
+            id: v4(),        
             img: img11,
             isSelected: false,
         },
     ]
 }
-
 
 const reducer = (state, action) => {
     const type = action.type;
@@ -127,6 +127,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 images: action.payload
+            }
+        case 'add-image': 
+            return {
+                ...state,
+                images: [...state.images, {id: v4(), img: action.payload, isSelected: false}]
             }
         default:
             state

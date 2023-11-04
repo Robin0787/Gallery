@@ -7,7 +7,6 @@ import Provider from "../Provider/Provider";
 const Main = lazy(() => import("../Layout/Main"));
 const Gallery = lazy(() => import("../Pages/Gallery/Gallery"));
 const Docs = lazy(() => import("../Pages/Docs/Docs"));
-const List = lazy(() => import("../Pages/List/List"));
 
 
 
@@ -23,10 +22,6 @@ const routes = createBrowserRouter([
             {
                 path: 'docs',
                 element: <Provider><Suspense fallback={<PageLoading />}> <Docs /></Suspense></Provider>
-            },
-            {
-                path: 'list',
-                element: <Provider><Suspense fallback={<PageLoading />}> <List /></Suspense></Provider>
             }
         ]
     }
