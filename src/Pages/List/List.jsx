@@ -64,9 +64,17 @@ const List = () => {
                                 <div key={item.id}
                                     className='w-[200px] py-3 px-5 shadow-md border border-gray-200 rounded cursor-grab duration-500'
                                     draggable
-                                    onDragStart={() => dragItem.current = index}
+                                    onDragStart={(e) => {
+                                        dragItem.current = index
+                                        e.dataTransfer.setData('text/plain', index.toString()); // Required for Firefox support
+                                        e.dataTransfer.dropEffect = 'copy'; // Specify the operation (move in this case)
+                                        e.target.style.opacity = '0.1'; // Optional: make the element transparent during drag
+                                    }}
                                     onDragEnter={() => dragOverItem.current = index}
-                                    onDragEnd={handleSort}
+                                    onDragEnd={(e) => {
+                                       
+                                     }}
+                                    onDrop={(e) => { e.preventDefault(); handleSort() }}
                                     onDragOver={(e) => e.preventDefault()}
                                 >
                                     <div className='flex justify-start items-center gap-6'>

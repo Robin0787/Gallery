@@ -17,3 +17,7 @@ img::selection {
   color: transparent;
   background: transparent;
 }
+
+.dragging-item {
+  opacity: 0;
+}
