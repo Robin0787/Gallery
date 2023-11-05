@@ -110,12 +110,37 @@ const Docs = () => {
                     </article>
                     <hr className='my-5 border border-gray-200 dark:border-gray-700' />
                     <article className='mt-5 text-lg'>
-                        <h1 className='text-xl md:text-3xl font-light'>How does the <span className="indicator">drag-and-drop</span> functionality work?</h1>         
+                        <h1 className='text-xl md:text-3xl font-light'>How does the <span className="indicator">drag-and-drop</span> functionality work?</h1>
                         <div className='flex flex-col md:flex-row justify-between items-center gap-5 md:gap-8 mt-7'>
                             <img src={singleImagePic} alt="provider-component" className='w-full md:w-1/2 rounded-md' />
                             <img src={Drag_Drop_function} alt="provider-component" className='w-full md:w-1/2 rounded-md' />
                         </div>
-                                    
+                        <p className='mt-5'>
+                            Our all images are in the <span className="indicator">galleryData</span> state. And you can see that I mapped the galleryData and displayed all the images on the screen. Each of the <span className="indicator">div</span> includes our main <span className="indicator">SingleImageCard</span> component and In the <span className="indicator">SingleImageCard</span> component, our image component is defined.
+                            Here I declared the <span className="indicator">div</span> for <span className="indicator">drag & drop</span> functionality.
+                        </p>
+                        <p className='mt-3'>
+                            In the div I defined some <span className="indicator">DOM Event</span> for implementing the <span className="indicator">drag & drop</span> functionality.
+                        </p>
+                        <p className='mt-3'>
+                            The <span className="indicator">draggable</span> property in the div for allowing to drag the element.
+                        </p>
+                        <p className='mt-3'>
+                            The <span className="indicator">handleDragStart</span> function will execute when a user will start dragging an element. And the <span className="indicator">handleDragEnter</span> function will execute when the dragged element entered over another elements field.
+                            And the <span className="indicator">handleDragEnd</span> function will execute when the user drop the element or cancel dragging.
+                        </p>
+                        <p className='mt-3'>
+                            The <span className="indicator">handleSort</span> function sorts or re-orders the gallery images based on the image index.
+                        </p>
+                        <p className='mt-3'>
+                            The <span className="indicator">handleDragStart</span> function receives the <span className="indicator">event as e and the index </span> of the image. Then it just stores it's index to the <span className="indicator">dragItem.current</span> ref.
+                        </p>
+                        <p className='mt-3'>
+                            The <span className="indicator">handleDragEnter</span> function receives the <span className="indicator">event as e and the index </span> of the image. Then it just stores it's index to the <span className="indicator">dragOverItem.current</span> ref.
+                        </p>
+                        <p className='mt-3'>
+                            And The <span className="indicator">handleDragEnd</span> function eventually called the <span className="indicator">handleSort</span> function so the the dragged element will be replaced on it's dragged position.
+                        </p>
                     </article>
                 </section>
             </Container >

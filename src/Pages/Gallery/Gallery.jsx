@@ -28,14 +28,14 @@ const Gallery = () => {
         dispatch({ type: 're-order', payload: _duplicateImages });
     }
 
-    const handleDragStart = (e,index) => {
+    const handleDragStart = (e, index) => {
         dragItem.current = index;
         // Catching the dragging element and giving it's child opacity 0 so that user can relate the image/item is moving with the cursor;
 
         // Catching the dragging element
         const itemElement = e.target;
 
-        // Giving dragging elements child to opacity 0.
+        // Giving dragging elements child to opacity 0. so that we can see that the dragged image has only border.
         itemElement.childNodes[0].style.opacity = '0';
     }
 
