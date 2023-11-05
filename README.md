@@ -1,8 +1,6 @@
 ## Welcome to the Image Gallery.
 
-#
-
-#### This is the live link to this website :
+## This is the live link to this website :
 
 ### To install this project on your local machine.
 
