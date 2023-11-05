@@ -1,4 +1,4 @@
-## Welcome to the Image Gallery.
+# Welcome to the Image Gallery.
 
 ## This is the live link to this website :
 
