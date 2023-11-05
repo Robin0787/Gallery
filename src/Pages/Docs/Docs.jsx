@@ -3,6 +3,8 @@ import Container from '../../Components/Container/Container';
 import FolderStructure from "../../assets/Docs/FolderStructure.png";
 import ProviderComp from "../../assets/Docs/ProviderComp.png";
 import ProviderReducer from "../../assets/Docs/ProviderReducer.png";
+import Drag_Drop_function from "../../assets/Docs/drag&drop.png";
+import singleImagePic from "../../assets/Docs/singleImage.png";
 
 const Docs = () => {
 
@@ -65,10 +67,11 @@ const Docs = () => {
                             The <span className="indicator">Provider</span> component takes a component as a children and return another component by putting some states and values on it.
                         </p>
                         <p className='mt-2'>
-                            The <span className="indicator">useEffect hook</span> and <span className="indicator">handleThemeSwitch</span> function are used for the theme functionality.
+                            The <span className="indicator">useEffect hook</span> and <span className="indicator">handleThemeSwitch</span> function are used for the white and dark theme functionality.
                         </p>
                         <p className='mt-2'>
-                            You can see that I used the <span className="indicator">useContext</span> hook so that I can easily share my all the states and data with every component.
+                            You can see that I used the <span className="indicator">useContext</span> hook so that I can easily share my all the states and data with
+                            each of every component in this application.
                         </p>
                     </article>
                     <hr className='my-5 border border-gray-200 dark:border-gray-700' />
@@ -84,6 +87,36 @@ const Docs = () => {
                         </p>
                     </article>
                     <hr className='my-5 border border-gray-200 dark:border-gray-700' />
+                    <article className='mt-5 text-lg'>
+                        <h1 className='text-xl md:text-3xl font-light'>Let's understand the <span className="indicator">reducer</span> function.</h1>
+                        <p className="mt-3">
+                            In the <span className="indicator">reducer</span> function you can see that I have defined <span className="indicator">7 different cases</span> to control the gallery functionality.
+                        </p>
+                        <ul className='list-decimal text-base ml-4 mt-3 space-y-3'>
+                            <li>The <span className="indicator">delete-img</span> case is used for selecting images which is selected by the user. This case receives a <span className="indicator">type</span>, <span className="indicator">payload</span>, and <span className="indicator">checkStatus</span> values in the action property. When a user select any image, then the dispatch function reaches here and set the items <span className="indicator">isSelected</span> Property true.</li>
+
+                            <li>The <span className="indicator">delete-img</span> case is used for <span className="indicator">deleting single image</span> from the gallery. When a uer clicks on the delete icon of the image the dispatch function reaches here and filtered out that image from the state.</li>
+
+                            <li>The <span className="indicator">delete-selected</span> case is used for deleting selected images. When a user click the delete images button the dispatch function will reach here and filtered-out all the selected images.</li>
+
+                            <li>The <span className="indicator">increase-selected</span> case is used to increase the <span className="indicator">selectedImages</span> property of the state. When a user select an image then this case will execute and increase the state accordingly.</li>
+
+                            <li>The <span className="indicator">decrease-selected</span>case is used to decrease the <span className="indicator">selectedImages</span> property of the state. When a user select an image then this case will execute and decrease the state accordingly</li>
+
+                            <li>The <span className="indicator">re-order</span> case is used for re-ordering gallery images. When a user <span className="indicator">drag & drop</span> a element from it's original place then this case will update the state and display the re-ordered images accordingly. This case receives the updated array or images in the <span className="indicator">action.payload</span> property.</li>
+
+                            <li>And the <span className="indicator">add-image</span> case is used for adding new images on the gallery. When a user click the add image field and upload a image, then only this case will execute and add the image to the gallery as well.</li>
+                        </ul>
+                    </article>
+                    <hr className='my-5 border border-gray-200 dark:border-gray-700' />
+                    <article className='mt-5 text-lg'>
+                        <h1 className='text-xl md:text-3xl font-light'>How does the <span className="indicator">drag-and-drop</span> functionality work?</h1>         
+                        <div className='flex flex-col md:flex-row justify-between items-center gap-5 md:gap-8 mt-7'>
+                            <img src={singleImagePic} alt="provider-component" className='w-full md:w-1/2 rounded-md' />
+                            <img src={Drag_Drop_function} alt="provider-component" className='w-full md:w-1/2 rounded-md' />
+                        </div>
+                                    
+                    </article>
                 </section>
             </Container >
             <div className="pb-10"></div>
