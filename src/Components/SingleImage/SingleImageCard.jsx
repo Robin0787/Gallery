@@ -24,9 +24,6 @@ const SingleImageCard = ({ item, }) => {
         }
     }
 
-
-
-
     return (
         <div id={item.id} className='relative w-full group duration-500 '>
             <img src={item?.img} className='rounded-md bg-white' />

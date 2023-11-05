@@ -4,6 +4,7 @@ import FolderStructure from "../../assets/Docs/FolderStructure.png";
 import ProviderComp from "../../assets/Docs/ProviderComp.png";
 import ProviderReducer from "../../assets/Docs/ProviderReducer.png";
 import Drag_Drop_function from "../../assets/Docs/drag&drop.png";
+import imageCardFunctions from "../../assets/Docs/image_card_functions.png";
 import singleImagePic from "../../assets/Docs/singleImage.png";
 
 const Docs = () => {
@@ -12,7 +13,7 @@ const Docs = () => {
         <section>
             <Container className="text-gray-900 p-5 md:p-10 mt-10 rounded-md 
             dark:text-gray-300 dark:bg-primary duration-300 shadow-[0_0_5px] shadow-gray-300 dark:shadow-gray-600 font-light">
-                <section className=''>
+                <section>
                     <article >
                         <h1 className='text-3xl md:text-4xl font-light'>Welcome to the Documentation for this Gallery Application</h1>
                     </article>
@@ -20,7 +21,8 @@ const Docs = () => {
                         <h1 className='text-xl md:text-3xl font-light'>Let's Get Started</h1>
                         <p className=' mt-3 text-lg '>This is a simple image-showing gallery web application where you can <span className='indicator'>add</span>, <span className='indicator'>delete</span>, and <span className='indicator'>re-order</span> images.</p>
                         <p className='text-lg mt-2'>
-                            I have used <span className="indicator">Tailwind CSS</span> for styling and <span className="indicator">useReducer</span> hook for managing all the states of this project.
+                            I used <span className="indicator">React.js</span>, <span className="indicator">Tailwind CSS</span>, and <span className="indicator">JavaScript</span> to build this application.
+                            I used <span className="indicator">useReducer</span> hook to manage all the states in this application.
                         </p>
 
                     </article>
@@ -28,7 +30,7 @@ const Docs = () => {
                         <h1 className='text-lg md:text-2xl font-light'>Let's Understand the folder structure of this project.</h1>
                         <img src={FolderStructure} className='rounded-md mt-5' />
                         <p className='text-lg mt-5'>
-                            In this project's folder structure, we can see a src folder. In this <span className='indicator'>src</span> folder, all our main code is located.
+                            In this projects folder structure, we can see there is a src folder. In this <span className='indicator'>src</span> folder, all our main code is located.
                         </p>
                         <p className='text-lg mt-2'>
                             Our all images are located in the <span className="indicator">asset</span> folder. We have our all images here.
@@ -116,14 +118,14 @@ const Docs = () => {
                             <img src={Drag_Drop_function} alt="provider-component" className='w-full md:w-1/2 rounded-md' />
                         </div>
                         <p className='mt-5'>
-                            Our all images are in the <span className="indicator">galleryData</span> state. And you can see that I mapped the galleryData and displayed all the images on the screen. Each of the <span className="indicator">div</span> includes our main <span className="indicator">SingleImageCard</span> component and In the <span className="indicator">SingleImageCard</span> component, our image component is defined.
+                            Our all images are in the <span className="indicator">galleryData</span> state. And you can see that I mapped the galleryData and displayed all the images on the screen. Each of the <span className="indicator">divs</span> includes our main <span className="indicator">SingleImageCard</span> component and In the <span className="indicator">SingleImageCard</span> component, our image component is defined.
                             Here I declared the <span className="indicator">div</span> for <span className="indicator">drag & drop</span> functionality.
                         </p>
                         <p className='mt-3'>
-                            In the div I defined some <span className="indicator">DOM Event</span> for implementing the <span className="indicator">drag & drop</span> functionality.
+                            In the div I defined some <span className="indicator">DOM Event</span> to implement the <span className="indicator">drag & drop</span> functionality.
                         </p>
                         <p className='mt-3'>
-                            The <span className="indicator">draggable</span> property in the div for allowing to drag the element.
+                            The <span className="indicator">draggable</span> property in the div allows to drag of the element.
                         </p>
                         <p className='mt-3'>
                             The <span className="indicator">handleDragStart</span> function will execute when a user will start dragging an element. And the <span className="indicator">handleDragEnter</span> function will execute when the dragged element entered over another elements field.
@@ -141,6 +143,26 @@ const Docs = () => {
                         <p className='mt-3'>
                             And The <span className="indicator">handleDragEnd</span> function eventually called the <span className="indicator">handleSort</span> function so the the dragged element will be replaced on it's dragged position.
                         </p>
+                    </article>
+                    <hr className='my-5 border border-gray-200 dark:border-gray-700' />
+                    {/* Docs for Single Image Card Component */}
+                    <article className='mt-5 text-lg'>
+                        <h1 className='text-xl md:text-3xl font-light'>Let's see how does the <span className="indicator">select image</span> and <span className="indicator">delete image</span> functionalities work?</h1>
+                        <div className='mt-8'>
+                            <img src={imageCardFunctions} alt="" className='mx-auto rounded-md'/>
+                        </div>
+                        <div className='mt-5'>
+                        <h1 className='text-xl md:text-3xl font-light'>handleSelect Function.</h1>
+                        <p className="mt-3">
+                            The <span className="indicator">handleSelect</span> function is executed when a user selects an image <span className="indicator">by checking the checkbox</span>. When this function is execute it dispatch a function which updates the global state which is in the <span className="indicator">Provider.jsx</span> file. The <span className="indicator">dispatch</span> function takes an object of three properties those are <span className="indicator">type</span>, <span className="indicator">payload</span>, and <span className="indicator">checkStatus</span>. The <span className="indicator">payload</span> property takes the id of the selected image. And the <span className="indicator">checkStatus</span> property takes the true if the image is selected otherwise it takes false as a value. When a user selects or unselects an image the <span className="indicator">selectedImage</span> state increase or decrease accordingly.
+                        </p>
+                        </div>
+                        <div className="mt-5">
+                        <h1 className='text-xl md:text-3xl font-light'>handleDelete Function.</h1>
+                        <p className="mt-3">
+                            The <span className="indicator">handleDelete</span> function deletes a single element from the gallery. This <span className="indicator">handleDelete</span> function deletes only one image and if the image is selected while deleting it's decreasing the <span className="indicator">selectedImages</span> state as well.
+                        </p>
+                        </div>
                     </article>
                 </section>
             </Container >
